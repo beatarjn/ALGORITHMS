@@ -28,4 +28,23 @@ public class KnapsackImpl {
         }
         return dp[items.length - 1][target - 1];
     }
+
+    public static int getMaxValueII(int[][] items, int target) {
+        int[][] dp = new int[items.length + 1][target + 1];
+
+        for (int i = 1; i <= items.length; i++) {
+            int weight = items[i - 1][0];
+            int value = items[i - 1][1];
+            for (int index = 1; index <= target; index++) {
+                if (weight > index) {
+                    dp[i][index] = dp[i - 1][index];
+                } else if (weight == index) {
+                    dp[i][index] = value;
+                } else {
+                    dp[i][index] = Math.max(dp[i - 1][index], dp[i - 1][index - weight] + value);
+                }
+            }
+        }
+        return dp[items.length][target];
+    }
 }

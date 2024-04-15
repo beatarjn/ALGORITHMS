@@ -19,6 +19,13 @@ class KnapsackImplTest {
         assertEquals(expected, result);
     }
 
+    @ParameterizedTest
+    @MethodSource("provideTestdata")
+    void testKnapsackII(int[][] values, int target, int expected) {
+        int result = knapsackImpl.getMaxValueII(values, target);
+        assertEquals(expected, result);
+    }
+
     private static Stream<Arguments> provideTestdata() {
         return Stream.of(
                 Arguments.of(new int[][]{{5, 7}, {6, 8}, {4, 3}, {2, 7}}, 7, 14),
