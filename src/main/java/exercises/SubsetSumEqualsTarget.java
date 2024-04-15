@@ -1,7 +1,5 @@
 package exercises;
 
-import java.util.Arrays;
-
 public class SubsetSumEqualsTarget {
     public boolean subsetSumToTarget(int target, int[] arr){
         int ind = arr.length;

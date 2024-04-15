@@ -1,7 +1,6 @@
 package exercises.dynamic_programming;
 
 import java.util.Objects;
-import java.util.stream.IntStream;
 
 public class IngredientsMove {
 
@@ -17,9 +16,6 @@ public class IngredientsMove {
     }
 
     private int getNumberOfMoves(int n, int m, String[] available, String[] recipe, int[][] dp) {
-        IntStream.rangeClosed(0, m).forEach(j -> dp[0][j] = 0);
-        IntStream.rangeClosed(0, n).forEach(i -> dp[i][0] = 0);
-
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= m; j++) {
                 if (Objects.equals(available[i - 1], recipe[j - 1])) {
