@@ -19,10 +19,11 @@ public class MinimumSizeSubarraySum {
                 if (nums[i - 1] == j) {
                     dp[i][j] = 1;
                 }
-                if (nums[i - 1] < j) {
-                    if (dp[i - 1][j - nums[i - 1]] != 0) {
-                        dp[i][j] = dp[i - 1][j - nums[i - 1]] + 1;
-                    }
+                if (nums[i - 1] < j && dp[i - 1][j - nums[i - 1]] != 0) {
+                    dp[i][j] = dp[i - 1][j - nums[i - 1]] + 1;
+                }
+                if (nums[i - 1] > j) {
+                    dp[i][j] = dp[i - 1][j];
                 }
             }
         }
