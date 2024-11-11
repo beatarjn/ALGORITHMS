@@ -24,7 +24,7 @@ class MinimumSizeSubarraySumTest {
                 Arguments.of(new int[]{2, 3, 1, 2, 4, 3}, 7, 2),
                 Arguments.of(new int[]{1, 4, 4}, 4, 1),
                 Arguments.of(new int[]{1, 1, 1, 1, 1, 1, 1, 1}, 11, 0),
-                Arguments.of(new int[]{2, 16, 14, 15}, 20, 0),
+                Arguments.of(new int[]{2, 16, 14, 15}, 20, 2),
                 Arguments.of(new int[]{1, 2, 3, 4, 5}, 9, 2),
                 Arguments.of(new int[]{1, 2, 3, 4, 5}, 11, 3)
         );
