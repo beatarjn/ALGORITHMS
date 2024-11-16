@@ -1,14 +1,13 @@
 package leetcode;
 
+import java.util.Arrays;
+
 public class MaximumAverageSubarrayI {
 
     public double findMaxAverage(int[] nums, int k) {
         int max;
-        int kSum = 0;
+        int kSum = Arrays.stream(nums, 0, k).sum();
 
-        for (int i = 0; i < k; i++) {
-            kSum += nums[i];
-        }
         max = kSum;
 
         for (int i = k; i < nums.length; i++) {
